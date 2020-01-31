@@ -8,6 +8,9 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
+
+import java.io.File;
 
 public class OptionsController {
 
@@ -102,14 +105,14 @@ public class OptionsController {
     }
 
     @FXML
-    private void stopGame() {
+    public void stopGame() {
         Launcher.getInstance().stopGame();
         gameStopButton.setDisable(true);
         gameStartButton.setDisable(false);
     }
 
     @FXML
-    private void resetField() {
+    public void resetField() {
         Launcher.getInstance().getGame().resetGame();
         Launcher.getInstance().getRunningMainUI().getRunningController().drawField(Launcher.getInstance().getGame().getFeld());
         Launcher.getInstance().getStatsUI().getController().resetGraph();
@@ -118,6 +121,30 @@ public class OptionsController {
     @FXML
     private void resetSystem() {
         Launcher.getInstance().getRunningMainUI().getRunningController().resetSystem();
+    }
+
+    @FXML
+    private void load() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Load file!");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Correctly formatted Text files", "*.txt");
+        fileChooser.getExtensionFilters().add(filter);
+        File loadFile = fileChooser.showOpenDialog(Launcher.getInstance().getOptionsUI().getMainStage());
+        if (loadFile != null) {
+            Launcher.getInstance().getFileManager().readFile(loadFile);
+        }
+    }
+
+    @FXML
+    private void save() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save file!");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Correctly formatted Text files", "*.txt");
+        fileChooser.getExtensionFilters().add(filter);
+        File saveFile = fileChooser.showSaveDialog(Launcher.getInstance().getOptionsUI().getMainStage());
+        if (saveFile != null) {
+            Launcher.getInstance().getFileManager().saveFile(saveFile);
+        }
     }
 
 }
