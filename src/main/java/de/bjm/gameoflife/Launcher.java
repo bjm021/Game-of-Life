@@ -60,6 +60,10 @@ public class Launcher extends Application {
         return optionsUI;
     }
 
+    public FileManager getFileManager() {
+        return fileManager;
+    }
+
     public double getScale() {
         return scale;
     }
