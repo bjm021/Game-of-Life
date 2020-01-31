@@ -19,6 +19,9 @@ public class OptionsUI {
     public OptionsController getController() {
         return controller;
     }
+    public Stage getMainStage() {
+        return mainStage;
+    }
 
     public OptionsUI() {
         mainStage = new Stage();
