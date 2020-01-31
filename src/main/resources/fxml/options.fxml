@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="536.0" prefWidth="488.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.bjm.gameoflife.gui.options.OptionsController">
+   <children>
+      <Label layoutX="76.0" layoutY="44.0" text="Options">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="15.0" layoutY="104.0" text="Speed (MilliSeconds)">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Slider fx:id="speedSlider" blockIncrement="1.0" layoutX="16.0" layoutY="139.0" majorTickUnit="100.0" max="500.0" min="10.0" minorTickCount="10" prefHeight="14.0" prefWidth="215.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+      <Slider fx:id="scaleSlider" blockIncrement="1.0" layoutX="16.0" layoutY="230.0" majorTickUnit="1.0" max="15.0" min="2.0" minorTickCount="0" prefHeight="14.0" prefWidth="215.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="5.0" />
+      <Label layoutX="14.0" layoutY="193.0" text="Scale (multiplier)">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="488.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Load" />
+                  <MenuItem mnemonicParsing="false" text="Save" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" onAction="#quit" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="WIndow">
+            <items>
+                  <CheckMenuItem fx:id="outputCheckMenu" mnemonicParsing="false" selected="true" text="Game Output" />
+                  <CheckMenuItem fx:id="statsCheckMenu" mnemonicParsing="false" selected="true" text="Statistics &amp; Analytics" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="41.0" layoutY="303.0" text="Game Control">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="gameStartButton" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#startGame" prefHeight="38.0" prefWidth="102.0" text="Start" />
+      <Button fx:id="gameStopButton" layoutX="132.0" layoutY="359.0" mnemonicParsing="false" onAction="#stopGame" prefHeight="38.0" prefWidth="102.0" text="Stop" />
+      <Button fx:id="resetButton" layoutX="16.0" layoutY="415.0" mnemonicParsing="false" onAction="#resetField" prefHeight="25.0" prefWidth="215.0" text="Reset Field" />
+      <Label layoutX="305.0" layoutY="34.0" text="Edit Mode">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Separator layoutX="242.0" layoutY="4.0" orientation="VERTICAL" prefHeight="531.0" prefWidth="4.0" />
+      <Separator layoutY="282.0" prefHeight="0.0" prefWidth="245.0" />
+      <Label layoutX="259.0" layoutY="112.0" prefHeight="46.0" prefWidth="215.0" text="You can just Mouse-click on the uptput window to set and unset cells" wrapText="true" />
+      <CheckBox fx:id="editModeCheckBox" layoutX="259.0" layoutY="74.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="215.0" text="Enable">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </CheckBox>
+      <Separator layoutX="244.0" layoutY="167.0" prefHeight="0.0" prefWidth="245.0" />
+      <Label fx:id="darkThemeCheckBox" layoutX="303.0" layoutY="174.0" text="UI Options">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="darkModeCheckBox" layoutX="259.0" layoutY="219.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="215.0" text="Use dark mode">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="17.0" layoutY="450.0" mnemonicParsing="false" onAction="#resetSystem" prefHeight="39.0" prefWidth="215.0" text="Reset System (EXPERIMENTAL)" />
+   </children>
+</AnchorPane>

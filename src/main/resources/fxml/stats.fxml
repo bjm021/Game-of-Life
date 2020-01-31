@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="mainPane" prefHeight="403.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.bjm.gameoflife.gui.stats.StatsController">
+   <children>
+      <Separator layoutX="532.0" layoutY="-7.0" orientation="VERTICAL" prefHeight="410.0" prefWidth="4.0" />
+      <Label layoutX="553.0" layoutY="14.0" text="Realtime stats">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="539.0" layoutY="72.0" text="Living Cells:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="539.0" layoutY="117.0" text="Step:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="stepLabel" layoutX="661.0" layoutY="117.0" text="0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="livingLabel" layoutX="661.0" layoutY="72.0" text="0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
