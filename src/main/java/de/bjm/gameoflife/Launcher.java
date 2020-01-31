@@ -4,11 +4,13 @@ import de.bjm.gameoflife.gui.MainController;
 import de.bjm.gameoflife.gui.MainUI;
 import de.bjm.gameoflife.gui.options.OptionsUI;
 import de.bjm.gameoflife.gui.stats.StatsUI;
+import de.bjm.gameoflife.io.FileManager;
 import de.bjm.gameoflife.logic.GameOfLife;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -30,6 +32,7 @@ public class Launcher extends Application {
     private RunningGame runningGame;
     private StatsUI statsUI;
     private Runnable gameLogic;
+    private FileManager fileManager;
 
 
     //ui elements
@@ -93,6 +96,7 @@ public class Launcher extends Application {
         scale = 5;
         instance = this;
         mainStage = primaryStage;
+        fileManager = new FileManager();
 
         runningMainUI = new MainUI(mainStage);
         //mainStage.setWidth(1000);
