@@ -127,7 +127,7 @@ public class OptionsController {
     private void load() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Load file!");
-        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Correctly formatted Text files", "*.txt");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Correctly formatted Text files", "*.txt", "*.gol");
         fileChooser.getExtensionFilters().add(filter);
         File loadFile = fileChooser.showOpenDialog(Launcher.getInstance().getOptionsUI().getMainStage());
         if (loadFile != null) {
@@ -139,7 +139,7 @@ public class OptionsController {
     private void save() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save file!");
-        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Correctly formatted Text files", "*.txt");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Correctly formatted Text files", "*.txt", "*.gol");
         fileChooser.getExtensionFilters().add(filter);
         File saveFile = fileChooser.showSaveDialog(Launcher.getInstance().getOptionsUI().getMainStage());
         if (saveFile != null) {
